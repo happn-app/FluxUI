@@ -1,0 +1,110 @@
+[
+	{
+		"ID": "happn-console:deployment/flux",
+		"Containers": [
+			{
+				"Name": "flux",
+				"Current": {
+					"ID": "docker.io/fluxcd/flux:1.20.0",
+					"Labels": {}
+				},
+				"LatestFiltered": {
+					"ID": "",
+					"Labels": {}
+				}
+			}
+		],
+		"ReadOnly": "NotInRepo",
+		"Status": "ready",
+		"Rollout": {
+			"Desired": 1,
+			"Updated": 1,
+			"Ready": 1,
+			"Available": 1,
+			"Outdated": 0,
+			"Messages": null
+		},
+		"SyncError": "",
+		"Antecedent": "",
+		"Labels": {
+			"fluxcd.io/sync-gc-mark": "sha256.LCJcJ4bwv1W-i4QXiBFBtbW28KZ1sfv0EV3Ss2rw2VU"
+		},
+		"Automated": false,
+		"Locked": false,
+		"Ignore": false,
+		"Policies": {}
+	},
+	{
+		"ID": "happn-console:deployment/happn-console",
+		"Containers": [
+			{
+				"Name": "happn-console",
+				"Current": {
+					"ID": "eu.gcr.io/happn-infra/happn-console-v3:3.7.0",
+					"Labels": {}
+				},
+				"LatestFiltered": {
+					"ID": "",
+					"Labels": {}
+				}
+			}
+		],
+		"ReadOnly": "",
+		"Status": "ready",
+		"Rollout": {
+			"Desired": 2,
+			"Updated": 2,
+			"Ready": 2,
+			"Available": 2,
+			"Outdated": 0,
+			"Messages": null
+		},
+		"SyncError": "",
+		"Antecedent": "",
+		"Labels": {
+			"fluxcd.io/sync-gc-mark": "sha256.Ob-xErs8l2QQCHj5_5EkNT8Gxg8hkU1Q9nznF_QnPyU"
+		},
+		"Automated": false,
+		"Locked": false,
+		"Ignore": false,
+		"Policies": {}
+	},
+	{
+		"ID": "happn-console:deployment/istio-ingressgateway-happn-console",
+		"Containers": [
+			{
+				"Name": "istio-proxy",
+				"Current": {
+					"ID": "docker.io/istio/proxyv2:1.6.5",
+					"Labels": {}
+				},
+				"LatestFiltered": {
+					"ID": "",
+					"Labels": {}
+				}
+			}
+		],
+		"ReadOnly": "NotInRepo",
+		"Status": "ready",
+		"Rollout": {
+			"Desired": 2,
+			"Updated": 2,
+			"Ready": 2,
+			"Available": 2,
+			"Outdated": 0,
+			"Messages": null
+		},
+		"SyncError": "",
+		"Antecedent": "",
+		"Labels": {
+			"app": "istio-ingressgateway-happn-console",
+			"fluxcd.io/sync-gc-mark": "sha256.VGuGUomknfkzVuun04_qdT-QRKxmTJpyhseoQG4DTYc",
+			"istio": "ingressgateway-happn-console",
+			"release": "istio"
+		},
+		"Automated": false,
+		"Locked": false,
+		"Ignore": false,
+		"Policies": {}
+	}
+]

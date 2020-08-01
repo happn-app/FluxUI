@@ -8,6 +8,8 @@
 import Cocoa
 import SwiftUI
 
+import XibLoc
+
 
 
 @main
@@ -16,10 +18,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	var window: NSWindow!
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Create the SwiftUI view that provides the window contents.
+		XibLocConfig.defaultPluralityDefinition = PluralityDefinition(string: NSLocalizedString("plurality definition", value: "(1)(*)", comment: "Plurality definition for XibLoc. See XibLoc doc for more info."))
+		
+		/* Create the SwiftUI view that provides the window contents. */
 		let contentView = ContentView()
 		
-		// Create the window and set the content view.
+		/* Create the window and set the content view. */
 		window = NSWindow(
 			contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
 			styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],

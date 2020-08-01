@@ -3,18 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B643F2B24D57F17001CD010 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F2A24D57F17001CD010 /* ImageRow.swift */; };
+		7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F2E24D57F6B001CD010 /* FluxImage.swift */; };
+		7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3024D57FD2001CD010 /* FluxContainer.swift */; };
+		7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3224D581E3001CD010 /* FluxWorkload.swift */; };
 		7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E92B524D540F70083252A /* AppDelegate.swift */; };
 		7B8E92B824D540F70083252A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E92B724D540F70083252A /* ContentView.swift */; };
 		7B8E92BA24D540F80083252A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E92B924D540F80083252A /* Assets.xcassets */; };
 		7B8E92BD24D540F80083252A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E92BC24D540F80083252A /* Preview Assets.xcassets */; };
 		7B8E930724D542D60083252A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E930924D542D60083252A /* Main.storyboard */; };
+		7BE0095624D5857100933472 /* XibLoc in Frameworks */ = {isa = PBXBuildFile; productRef = 7BE0095524D5857100933472 /* XibLoc */; };
+		7BE0095924D5860C00933472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0095724D5860C00933472 /* Localizable.strings */; };
+		7BE0095C24D588CC00933472 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0095B24D588CC00933472 /* images.json */; };
+		7BE0095E24D588F800933472 /* workloads.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0095D24D588F800933472 /* workloads.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B643F2A24D57F17001CD010 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		7B643F2E24D57F6B001CD010 /* FluxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxImage.swift; sourceTree = "<group>"; };
+		7B643F3024D57FD2001CD010 /* FluxContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainer.swift; sourceTree = "<group>"; };
+		7B643F3224D581E3001CD010 /* FluxWorkload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkload.swift; sourceTree = "<group>"; };
 		7B8E92B224D540F70083252A /* FluxUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FluxUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8E92B524D540F70083252A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B8E92B724D540F70083252A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +35,10 @@
 		7B8E92BE24D540F80083252A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8E92BF24D540F80083252A /* FluxUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FluxUI.entitlements; sourceTree = "<group>"; };
 		7B8E930824D542D60083252A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7BE0095824D5860C00933472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7BE0095A24D5862900933472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		7BE0095B24D588CC00933472 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
+		7BE0095D24D588F800933472 /* workloads.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = workloads.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,12 +46,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE0095624D5857100933472 /* XibLoc in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B643F2C24D57F3F001CD010 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B643F3024D57FD2001CD010 /* FluxContainer.swift */,
+				7B643F2E24D57F6B001CD010 /* FluxImage.swift */,
+				7B643F3224D581E3001CD010 /* FluxWorkload.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B643F2D24D57F4A001CD010 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B8E92B724D540F70083252A /* ContentView.swift */,
+				7B643F2A24D57F17001CD010 /* ImageRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7B8E92A924D540F70083252A = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +92,11 @@
 			isa = PBXGroup;
 			children = (
 				7B8E92B524D540F70083252A /* AppDelegate.swift */,
-				7B8E92B724D540F70083252A /* ContentView.swift */,
+				7B643F2D24D57F4A001CD010 /* Views */,
+				7B643F2C24D57F3F001CD010 /* Model */,
 				7B8E92B924D540F80083252A /* Assets.xcassets */,
 				7B8E930924D542D60083252A /* Main.storyboard */,
+				7BE0095724D5860C00933472 /* Localizable.strings */,
 				7B8E92BE24D540F80083252A /* Info.plist */,
 				7B8E92BF24D540F80083252A /* FluxUI.entitlements */,
 				7B8E92BB24D540F80083252A /* Preview Content */,
@@ -70,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				7B8E92BC24D540F80083252A /* Preview Assets.xcassets */,
+				7BE0095B24D588CC00933472 /* images.json */,
+				7BE0095D24D588F800933472 /* workloads.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -90,6 +130,9 @@
 			dependencies = (
 			);
 			name = FluxUI;
+			packageProductDependencies = (
+				7BE0095524D5857100933472 /* XibLoc */,
+			);
 			productName = FluxUI;
 			productReference = 7B8E92B224D540F70083252A /* FluxUI.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 7B8E92A924D540F70083252A;
+			packageReferences = (
+				7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */,
+			);
 			productRefGroup = 7B8E92B324D540F70083252A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,6 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8E930724D542D60083252A /* Main.storyboard in Resources */,
+				7BE0095E24D588F800933472 /* workloads.json in Resources */,
+				7BE0095924D5860C00933472 /* Localizable.strings in Resources */,
+				7BE0095C24D588CC00933472 /* images.json in Resources */,
 				7B8E92BD24D540F80083252A /* Preview Assets.xcassets in Resources */,
 				7B8E92BA24D540F80083252A /* Assets.xcassets in Resources */,
 			);
@@ -144,8 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */,
 				7B8E92B824D540F70083252A /* ContentView.swift in Sources */,
+				7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */,
+				7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */,
 				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,
+				7B643F2B24D57F17001CD010 /* ImageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +209,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				7B8E930824D542D60083252A /* Base */,
+				7BE0095A24D5862900933472 /* en */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7BE0095724D5860C00933472 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE0095824D5860C00933472 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -352,6 +414,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/happn-tech/XibLoc.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7BE0095524D5857100933472 /* XibLoc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */;
+			productName = XibLoc;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7B8E92AA24D540F70083252A /* Project object */;
 }
