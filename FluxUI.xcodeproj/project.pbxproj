@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B8E92B624D540F70083252A /* FluxUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E92B524D540F70083252A /* FluxUIApp.swift */; };
+		7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E92B524D540F70083252A /* AppDelegate.swift */; };
 		7B8E92B824D540F70083252A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E92B724D540F70083252A /* ContentView.swift */; };
 		7B8E92BA24D540F80083252A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E92B924D540F80083252A /* Assets.xcassets */; };
 		7B8E92BD24D540F80083252A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E92BC24D540F80083252A /* Preview Assets.xcassets */; };
+		7B8E930724D542D60083252A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E930924D542D60083252A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B8E92B224D540F70083252A /* FluxUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FluxUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B8E92B524D540F70083252A /* FluxUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxUIApp.swift; sourceTree = "<group>"; };
+		7B8E92B524D540F70083252A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B8E92B724D540F70083252A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B8E92B924D540F80083252A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B8E92BC24D540F80083252A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B8E92BE24D540F80083252A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8E92BF24D540F80083252A /* FluxUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FluxUI.entitlements; sourceTree = "<group>"; };
+		7B8E930824D542D60083252A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +55,10 @@
 		7B8E92B424D540F70083252A /* FluxUI */ = {
 			isa = PBXGroup;
 			children = (
-				7B8E92B524D540F70083252A /* FluxUIApp.swift */,
+				7B8E92B524D540F70083252A /* AppDelegate.swift */,
 				7B8E92B724D540F70083252A /* ContentView.swift */,
 				7B8E92B924D540F80083252A /* Assets.xcassets */,
+				7B8E930924D542D60083252A /* Main.storyboard */,
 				7B8E92BE24D540F80083252A /* Info.plist */,
 				7B8E92BF24D540F80083252A /* FluxUI.entitlements */,
 				7B8E92BB24D540F80083252A /* Preview Content */,
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8E930724D542D60083252A /* Main.storyboard in Resources */,
 				7B8E92BD24D540F80083252A /* Preview Assets.xcassets in Resources */,
 				7B8E92BA24D540F80083252A /* Assets.xcassets in Resources */,
 			);
@@ -141,11 +145,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8E92B824D540F70083252A /* ContentView.swift in Sources */,
-				7B8E92B624D540F70083252A /* FluxUIApp.swift in Sources */,
+				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7B8E930924D542D60083252A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B8E930824D542D60083252A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7B8E92C024D540F80083252A /* Debug */ = {
@@ -281,7 +296,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.happn.FluxUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,7 +322,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.happn.FluxUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
