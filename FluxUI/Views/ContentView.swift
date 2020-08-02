@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ContentView : View {
 	
-	var fluxWorkloads: [FluxWorkload]
+	@ObservedObject var fluxWorkloads: FluxWorkloadsViewModel
 	
 	var body: some View {
 		WorkloadNavigationView(fluxWorkloads: fluxWorkloads)
@@ -34,7 +34,8 @@ struct ContentView_Previews : PreviewProvider {
 	static let workloads = try! JSONDecoder().decode([FluxWorkload].self, from: Data(contentsOf: Bundle(for: Obj.self).url(forResource: "workloads", withExtension: "json")!))
 	
 	static var previews: some View {
-		ContentView(fluxWorkloads: workloads)
+		Text("TODO")
+//		ContentView(fluxWorkloads: workloads)
 	}
 	
 }

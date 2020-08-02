@@ -6,6 +6,7 @@
  */
 
 import Cocoa
+import Foundation
 
 import XibLoc
 
@@ -16,6 +17,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		XibLocConfig.defaultPluralityDefinition = PluralityDefinition(string: NSLocalizedString("plurality definition", value: "(1)(*)", comment: "Plurality definition for XibLoc. See XibLoc doc for more info."))
+		
+		/* Set some PATH vars. But after all we’re not doing that! The Sandbox and
+		 * hardened runtime make it a bit more difficult to access stuff, so we’ll
+		 * simply embed fluxctl in the app… */
+//		let homePath = FileManager.default.homeDirectoryForCurrentUser.path
+//		let currentPath = getenv("PATH").flatMap{ String(cString: $0) } ?? ""
+//		setenv("PATH", currentPath + (!currentPath.isEmpty ? ":" : "") + "/usr/local/bin:" + homePath + "/usr/homebrew/bin", 1)
 		
 //		do {
 //			let images = try JSONDecoder().decode([FluxImage].self, from: Data(contentsOf: Bundle(for: type(of: self)).url(forResource: "images", withExtension: "json")!))

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1B2CCC24D74F3B0098DC07 /* fluxctl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B493AFB24D7431700E7143D /* fluxctl */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7B493AF324D6EFA800E7143D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF224D6EFA800E7143D /* MainWindowController.swift */; };
 		7B493AF524D6F90600E7143D /* WorkloadNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */; };
 		7B493AF824D7141D00E7143D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF724D7141D00E7143D /* Constants.swift */; };
+		7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */; };
+		7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AFE24D7445B00E7143D /* SimpleError.swift */; };
 		7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F2E24D57F6B001CD010 /* FluxImage.swift */; };
 		7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3024D57FD2001CD010 /* FluxContainer.swift */; };
 		7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3224D581E3001CD010 /* FluxWorkload.swift */; };
@@ -26,10 +29,26 @@
 		7BE0096524D6E8D500933472 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E92BC24D540F80083252A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7B1B2CCB24D74F350098DC07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				7B1B2CCC24D74F3B0098DC07 /* fluxctl in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7B493AF224D6EFA800E7143D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkloadNavigationView.swift; sourceTree = "<group>"; };
 		7B493AF724D7141D00E7143D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkloadsViewModel.swift; sourceTree = "<group>"; };
+		7B493AFB24D7431700E7143D /* fluxctl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = fluxctl; sourceTree = "<group>"; };
+		7B493AFE24D7445B00E7143D /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		7B643F2E24D57F6B001CD010 /* FluxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxImage.swift; sourceTree = "<group>"; };
 		7B643F3024D57FD2001CD010 /* FluxContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainer.swift; sourceTree = "<group>"; };
 		7B643F3224D581E3001CD010 /* FluxWorkload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkload.swift; sourceTree = "<group>"; };
@@ -64,8 +83,19 @@
 		7B493AF624D70FB300E7143D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7B493AFD24D7434300E7143D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7B493AFB24D7431700E7143D /* fluxctl */,
+				7BE0095724D5860C00933472 /* Localizable.strings */,
+				7B8E92B924D540F80083252A /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7B643F2C24D57F3F001CD010 /* Model */ = {
@@ -81,6 +111,7 @@
 		7B643F2D24D57F4A001CD010 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7B8E930924D542D60083252A /* Main.storyboard */,
 				7B8E92B724D540F70083252A /* ContentView.swift */,
 				7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */,
 				7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */,
@@ -109,14 +140,13 @@
 			isa = PBXGroup;
 			children = (
 				7B493AF724D7141D00E7143D /* Constants.swift */,
+				7B493AFE24D7445B00E7143D /* SimpleError.swift */,
 				7B8E92B524D540F70083252A /* AppDelegate.swift */,
 				7B493AF224D6EFA800E7143D /* MainWindowController.swift */,
 				7B643F2D24D57F4A001CD010 /* Views */,
 				7B493AF624D70FB300E7143D /* ViewModels */,
 				7B643F2C24D57F3F001CD010 /* Model */,
-				7B8E92B924D540F80083252A /* Assets.xcassets */,
-				7B8E930924D542D60083252A /* Main.storyboard */,
-				7BE0095724D5860C00933472 /* Localizable.strings */,
+				7B493AFD24D7434300E7143D /* Resources */,
 				7B8E92BE24D540F80083252A /* Info.plist */,
 				7B8E92BF24D540F80083252A /* FluxUI.entitlements */,
 				7B8E92BB24D540F80083252A /* Preview Content */,
@@ -144,6 +174,7 @@
 				7B8E92AE24D540F70083252A /* Sources */,
 				7B8E92AF24D540F70083252A /* Frameworks */,
 				7B8E92B024D540F70083252A /* Resources */,
+				7B1B2CCB24D74F350098DC07 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -221,6 +252,8 @@
 				7B493AF824D7141D00E7143D /* Constants.swift in Sources */,
 				7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */,
 				7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */,
+				7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */,
+				7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */,
 				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,
 				7B493AF324D6EFA800E7143D /* MainWindowController.swift in Sources */,
 			);
@@ -382,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.happn.FluxUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,7 +441,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.15.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.happn.FluxUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";

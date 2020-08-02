@@ -16,10 +16,38 @@ import SwiftUI
  * toolbar AFAICT 🤷‍♂️ */
 class MainWindowController : NSWindowController {
 	
+	var fluxURLs: [String] {
+		let ud = UserDefaults.standard
+		guard let urls = ud.array(forKey: Constants.UserDefaultsKeys.fluxURLs) as? [String]? else {
+			os_log(.error, "Invalid type in user defaults for Flux URLs.")
+			return []
+		}
+		return urls ?? []
+	}
+	
+	var fluxURL: String? {
+		let ud = UserDefaults.standard
+		guard let urlsOrNil = ud.array(forKey: Constants.UserDefaultsKeys.fluxURLs) as? [String]? else {
+			os_log(.error, "Invalid type in user defaults for Flux URLs.")
+			return nil
+		}
+		guard let urls = urlsOrNil else {
+			return nil
+		}
+		let index = ud.integer(forKey: Constants.UserDefaultsKeys.selectedFluxURLIndex)
+		guard index >= 0 && index < urls.count else {
+			os_log(.error, "Invalid url index for .")
+			return nil
+		}
+		return urls[index]
+	}
+	
 	override func windowDidLoad() {
 		super.windowDidLoad()
 		
-		let contentView = ContentView(fluxWorkloads: [])
+		let model = FluxWorkloadsViewModel(fluxURL: fluxURL ?? "")
+		model.load()
+		let contentView = ContentView(fluxWorkloads: model)
 		window?.contentView = NSHostingView(rootView: contentView)
 	}
 	
@@ -30,7 +58,8 @@ class MainWindowController : NSWindowController {
 	}
 	
 	@IBAction func reloadFluxModel(_ sender: Any) {
-		print("hello!")
+		guard let fluxURL = fluxURL else {return}
+		FluxWorkloadsViewModel(fluxURL: fluxURL).load()
 	}
 	
 	@IBAction func fluxURLSelected(_ sender: Any) {
@@ -39,16 +68,15 @@ class MainWindowController : NSWindowController {
 			return
 		}
 		
-		let ud = UserDefaults.standard
-		let urls = ud.array(forKey: Constants.UserDefaultsKeys.fluxURLs) as? [String] ?? []
-		
-		let index = urls.firstIndex{ $0 == menuItem.title }
+		let index = fluxURLs.firstIndex{ $0 == menuItem.title }
 		if index == nil {
 			os_log(.error, "Cannot get index of selected menu item! Selecting first item.")
 			return
 		}
+		let ud = UserDefaults.standard
 		ud.setValue(index ?? 0, forKey: Constants.UserDefaultsKeys.selectedFluxURLIndex)
 		updateFluxMenu()
+		reloadFluxModel(sender)
 	}
 	
 	@IBAction func addFluxURL(_ sender: Any) {
@@ -71,15 +99,8 @@ class MainWindowController : NSWindowController {
 		fluxURLsMenu.items.filter{ $0.tag >= 0 }.forEach(fluxURLsMenu.removeItem)
 		
 		let ud = UserDefaults.standard
-		guard let urlsOrNil = ud.array(forKey: Constants.UserDefaultsKeys.fluxURLs) as? [String]? else {
-			os_log(.error, "Invalid type in user defaults for Flux URLs.")
-			return
-		}
-		guard let urls = urlsOrNil else {
-			return
-		}
 		
-		for url in urls.reversed() {
+		for url in fluxURLs.reversed() {
 			fluxURLsMenu.insertItem(withTitle: url, action: #selector(fluxURLSelected(_:)), keyEquivalent: "", at: 0)
 		}
 		

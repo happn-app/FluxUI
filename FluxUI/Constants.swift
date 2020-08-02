@@ -11,6 +11,8 @@ import Foundation
 
 enum Constants {
 	
+	static let appBundleId = "com.happn.FluxUI"
+	
 	enum UserDefaultsKeys {
 		
 		static let fluxURLs = "HPN Flux URLs"
