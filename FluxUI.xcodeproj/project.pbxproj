@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B493AF324D6EFA800E7143D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF224D6EFA800E7143D /* MainWindowController.swift */; };
 		7B493AF524D6F90600E7143D /* WorkloadNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */; };
+		7B493AF824D7141D00E7143D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF724D7141D00E7143D /* Constants.swift */; };
 		7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F2E24D57F6B001CD010 /* FluxImage.swift */; };
 		7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3024D57FD2001CD010 /* FluxContainer.swift */; };
 		7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3224D581E3001CD010 /* FluxWorkload.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		7B493AF224D6EFA800E7143D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkloadNavigationView.swift; sourceTree = "<group>"; };
+		7B493AF724D7141D00E7143D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B643F2E24D57F6B001CD010 /* FluxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxImage.swift; sourceTree = "<group>"; };
 		7B643F3024D57FD2001CD010 /* FluxContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainer.swift; sourceTree = "<group>"; };
 		7B643F3224D581E3001CD010 /* FluxWorkload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkload.swift; sourceTree = "<group>"; };
@@ -59,6 +61,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B493AF624D70FB300E7143D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		7B643F2C24D57F3F001CD010 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +108,11 @@
 		7B8E92B424D540F70083252A /* FluxUI */ = {
 			isa = PBXGroup;
 			children = (
+				7B493AF724D7141D00E7143D /* Constants.swift */,
 				7B8E92B524D540F70083252A /* AppDelegate.swift */,
 				7B493AF224D6EFA800E7143D /* MainWindowController.swift */,
 				7B643F2D24D57F4A001CD010 /* Views */,
+				7B493AF624D70FB300E7143D /* ViewModels */,
 				7B643F2C24D57F3F001CD010 /* Model */,
 				7B8E92B924D540F80083252A /* Assets.xcassets */,
 				7B8E930924D542D60083252A /* Main.storyboard */,
@@ -207,6 +218,7 @@
 				7BE0096024D5FB9D00933472 /* FluxWorkloadView.swift in Sources */,
 				7BE0096224D60F4C00933472 /* FluxWorkloadRow.swift in Sources */,
 				7B8E92B824D540F70083252A /* ContentView.swift in Sources */,
+				7B493AF824D7141D00E7143D /* Constants.swift in Sources */,
 				7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */,
 				7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */,
 				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,

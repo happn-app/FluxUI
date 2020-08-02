@@ -1,7 +1,3 @@
-"ODN-dN-ha9.title" = "";
-"rOQ-Y3-uab.title" = "";
-"xcW-WW-Rzh.title" = "";
-
 /* *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** */
 
 "1UK-8n-QPP.title" = "Customize Toolbar…";
@@ -145,6 +141,9 @@
 "Glp-0K-iGf.label" = "Flux URL";
 /* Palette label for the Flux URL toolbar item. */
 "Glp-0K-iGf.paletteLabel" = "Flux URL";
+
+/* Add a flux URL menu entry in the Flux URL toolbar item menu */
+"ODN-dN-ha9.title" = "Add a Flux URL…";
 
 /* Label for the Reload toolbar item. */
 "o1M-4f-dI6.label" = "Reload";

@@ -696,21 +696,25 @@
                         </view>
                         <toolbar key="toolbar" implicitIdentifier="9F05E1B0-6D1E-40A5-8283-8BD9092B2B32" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="regular" id="LY4-vD-zqZ">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="2D8A97DA-3E6F-4E31-B091-0871C5286F3A" label="Flux URL" paletteLabel="Flux URL" id="Glp-0K-iGf">
+                                <toolbarItem implicitItemIdentifier="2D8A97DA-3E6F-4E31-B091-0871C5286F3A" explicitItemIdentifier="FluxURLs" label="Flux URL" paletteLabel="Flux URL" id="Glp-0K-iGf">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="10" height="24"/>
                                     <size key="maxSize" width="9999" height="24"/>
                                     <popUpButton key="view" verticalHuggingPriority="750" id="Lci-cW-lgJ">
                                         <rect key="frame" x="0.0" y="14" width="80" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <popUpButtonCell key="cell" type="roundTextured" title="Item 1" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="ODN-dN-ha9" id="rz0-fX-4Ky">
+                                        <popUpButtonCell key="cell" type="roundTextured" title="Add a Flux URL…" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" tag="-1" imageScaling="proportionallyDown" inset="2" selectedItem="ODN-dN-ha9" id="rz0-fX-4Ky">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="Knl-x6-G0n">
                                                 <items>
-                                                    <menuItem title="Item 1" state="on" id="ODN-dN-ha9"/>
-                                                    <menuItem title="Item 2" id="rOQ-Y3-uab"/>
-                                                    <menuItem title="Item 3" id="xcW-WW-Rzh"/>
+                                                    <menuItem isSeparatorItem="YES" tag="-2" id="5d8-l7-MfO"/>
+                                                    <menuItem title="Add a Flux URL…" state="on" tag="-1" identifier="AddFluxURL" id="ODN-dN-ha9">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFluxURL:" target="nD6-IE-Qeh" id="Tf1-zv-IE6"/>
+                                                        </connections>
+                                                    </menuItem>
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>
@@ -719,7 +723,7 @@
                                 <toolbarItem implicitItemIdentifier="8F975754-7B97-4002-93DA-2F1434BF508A" label="Reload" paletteLabel="Reload Button" image="NSRefreshTemplate" id="o1M-4f-dI6">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="21" height="21"/>
-                                    <size key="maxSize" width="21" height="21"/>
+                                    <size key="maxSize" width="48" height="48"/>
                                     <button key="view" id="trW-hn-QTM">
                                         <rect key="frame" x="17" y="14" width="48" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -727,6 +731,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="reloadFluxModel:" target="nD6-IE-Qeh" id="yee-TA-WMU"/>
+                                        </connections>
                                     </button>
                                 </toolbarItem>
                             </allowedToolbarItems>
