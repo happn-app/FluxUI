@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17140" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17140" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="nD6-IE-Qeh">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17140"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -679,6 +680,55 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="1gT-IA-JFd">
+            <objects>
+                <windowController id="nD6-IE-Qeh" customClass="MainWindowController" customModule="FluxUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="FluxUI" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="jFj-c0-yVA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="268" y="330" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1097"/>
+                        <view key="contentView" id="QvH-rm-b39">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <toolbar key="toolbar" implicitIdentifier="9F05E1B0-6D1E-40A5-8283-8BD9092B2B32" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="regular" id="LY4-vD-zqZ">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="2D8A97DA-3E6F-4E31-B091-0871C5286F3A" label="Custom View" paletteLabel="Custom View" id="Glp-0K-iGf">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="10" height="24"/>
+                                    <size key="maxSize" width="9999" height="24"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="Lci-cW-lgJ">
+                                        <rect key="frame" x="0.0" y="14" width="80" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="roundTextured" title="Item 1" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="ODN-dN-ha9" id="rz0-fX-4Ky">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="Knl-x6-G0n">
+                                                <items>
+                                                    <menuItem title="Item 1" state="on" id="ODN-dN-ha9"/>
+                                                    <menuItem title="Item 2" id="rOQ-Y3-uab"/>
+                                                    <menuItem title="Item 3" id="xcW-WW-Rzh"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="Glp-0K-iGf"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="nD6-IE-Qeh" id="hIu-mO-nZN"/>
+                        </connections>
+                    </window>
+                </windowController>
+                <customObject id="vwd-G6-w8y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-408" y="365"/>
         </scene>
     </scenes>
 </document>

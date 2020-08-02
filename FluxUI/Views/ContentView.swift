@@ -9,27 +9,18 @@ import SwiftUI
 
 
 
-struct ContentView: View {
+struct ContentView : View {
+	
+	var fluxWorkloads: [FluxWorkload]
 	
 	var body: some View {
-		VStack{
-			MenuButton(label: Text("Select Flux Deployment")){
-				Text("http://flux-happn-console.podc.happn.io/api/flux")
-			}.padding()
-			HStack{
-				VStack{
-					Text("Deployment")
-					List {
-					}
-					
-				}
-				VStack{
-					Text("Versions")
-					List {
-					}
-				}
-			}
-		}
+		WorkloadNavigationView(fluxWorkloads: fluxWorkloads)
+		/* When we have macOS 11 compatibility. */
+//		.toolbar(items: {
+//			ToolbarItem {
+//				/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
+//			}
+//		})
 	}
 	
 }
@@ -39,8 +30,11 @@ struct ContentView: View {
 
 struct ContentView_Previews : PreviewProvider {
 	
+	class Obj : NSObject {}
+	static let workloads = try! JSONDecoder().decode([FluxWorkload].self, from: Data(contentsOf: Bundle(for: Obj.self).url(forResource: "workloads", withExtension: "json")!))
+	
 	static var previews: some View {
-		ContentView()
+		ContentView(fluxWorkloads: workloads)
 	}
 	
 }

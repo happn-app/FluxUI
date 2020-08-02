@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct FluxImage : Decodable {
+struct FluxImage : Decodable, Identifiable {
 	
 	var id: String
 	var containers: [FluxContainer]
