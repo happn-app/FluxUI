@@ -45,8 +45,9 @@ class FluxWorkloadsViewModel : ObservableObject {
 				guard let data = try pipe.fileHandleForReading.readToEnd() else {
 					throw SimpleError(message: "Did not get any data from fluxctl")
 				}
-				try DispatchQueue.main.sync{
-					self.workloads = try .success(JSONDecoder().decode([FluxWorkload].self, from: data))
+				let decoded = try JSONDecoder().decode([FluxWorkload].self, from: data)
+				DispatchQueue.main.sync{
+					self.workloads = .success(decoded)
 				}
 			} catch {
 				DispatchQueue.main.sync{
