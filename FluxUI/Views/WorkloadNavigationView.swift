@@ -36,11 +36,7 @@ struct WorkloadNavigationView : View {
 	}
 	
 	func workloadsView(_ workloads: [FluxWorkload]) -> some View {
-//		guard !workloads.isEmpty else {
-//			return noWorkloadsView
-//		}
-		
-		return NavigationView{
+		NavigationView{
 			List{
 				Section(header: Text("Workloads")){
 					ForEach(workloads){ workload in
