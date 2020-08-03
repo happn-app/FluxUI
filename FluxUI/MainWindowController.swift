@@ -90,7 +90,7 @@ class MainWindowController : NSWindowController {
 		fluxURLsMenu.items.filter{ $0.tag >= 0 }.forEach(fluxURLsMenu.removeItem)
 		
 		for (idx, settings) in allFluxSettings.enumerated().reversed() {
-			let menuItem = NSMenuItem(title: settings.url.absoluteString + " - " + settings.namespace, action: #selector(fluxURLSelected(_:)), keyEquivalent: "")
+			let menuItem = NSMenuItem(title: settings.namespace + " - " + settings.url.absoluteString, action: #selector(fluxURLSelected(_:)), keyEquivalent: "")
 			fluxURLsMenu.insertItem(menuItem, at: 0)
 			menuItem.tag = idx
 		}
