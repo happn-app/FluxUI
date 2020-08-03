@@ -13,15 +13,26 @@ struct FluxWorkload : Decodable, Identifiable {
 	
 	enum Status : String, Decodable {
 		
+		case unknown
+		case error
 		case ready
 		case updating
+		case started
 		
 	}
 	
 	enum ReadOnlyStatus : String, Decodable {
 		
 		case notReadonly = ""
+		
+		case readOnlyMode = "ReadOnlyMode"
+		
+		case noRepo = "NoRepo"
 		case notInRepo = "NotInRepo"
+		
+		case notReady = "NotReady"
+		
+		case system = "System"
 		
 	}
 	
