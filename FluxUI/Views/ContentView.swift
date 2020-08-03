@@ -35,8 +35,9 @@ struct ContentView_Previews : PreviewProvider {
 	static let workloads = try! JSONDecoder().decode([FluxWorkload].self, from: Data(contentsOf: Bundle(for: Obj.self).url(forResource: "workloads", withExtension: "json")!))
 	
 	static var previews: some View {
-		Text("TODO")
-//		ContentView(fluxWorkloads: workloads)
+		let m = FluxWorkloadsViewModel()
+		m.workloads = .success(workloads)
+		return ContentView(fluxWorkloads: m)
 	}
 	
 }
