@@ -16,7 +16,10 @@ struct FluxWorkloadRow : View {
 	var workload: FluxWorkload
 	
 	var body: some View {
-		Text(workload.id.split(separator: "/").last!).bold().truncationMode(.head)
+		Text(workload.id.split(separator: "/").last!)
+			.bold()
+			.foregroundColor(workload.isReadOnly ? .secondary : .primary)
+			.truncationMode(.head)
 	}
 	
 }
