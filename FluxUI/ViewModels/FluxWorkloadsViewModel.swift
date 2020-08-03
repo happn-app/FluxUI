@@ -26,7 +26,7 @@ class FluxWorkloadsViewModel : ObservableObject {
 	func load() {
 		assert(Thread.isMainThread)
 		guard let fluxSettings = fluxSettings else {
-			workloads = .failure(SimpleError(message: "No Flux URL."))
+			workloads = .failure(SimpleError(message: "No Flux settings."))
 			return
 		}
 		

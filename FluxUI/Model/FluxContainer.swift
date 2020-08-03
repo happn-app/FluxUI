@@ -11,7 +11,7 @@ import Foundation
 
 struct FluxContainer : Decodable {
 	
-	struct ContainerDescription : Decodable {
+	struct ContainerDescription : Decodable, Identifiable {
 		
 		var id: String
 		var digest: String?

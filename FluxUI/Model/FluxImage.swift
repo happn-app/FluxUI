@@ -9,6 +9,7 @@ import Foundation
 
 
 
+/** This is actually a FluxWorkload, but with less properties… */
 struct FluxImage : Decodable, Identifiable {
 	
 	var id: String

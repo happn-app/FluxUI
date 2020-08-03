@@ -10,6 +10,8 @@
 		7B1B2CCC24D74F3B0098DC07 /* fluxctl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B493AFB24D7431700E7143D /* fluxctl */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7B1B2CCE24D780DE0098DC07 /* FluxSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B2CCD24D780DE0098DC07 /* FluxSettings.swift */; };
 		7B1B2CD124D78B210098DC07 /* LegibleError in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1B2CD024D78B210098DC07 /* LegibleError */; };
+		7B1B2CD324D79BF90098DC07 /* FluxContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */; };
+		7B1B2CD524D79E7E0098DC07 /* FluxContainersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B2CD424D79E7E0098DC07 /* FluxContainersViewModel.swift */; };
 		7B493AF324D6EFA800E7143D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF224D6EFA800E7143D /* MainWindowController.swift */; };
 		7B493AF524D6F90600E7143D /* WorkloadNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */; };
 		7B493AF824D7141D00E7143D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF724D7141D00E7143D /* Constants.swift */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		7B1B2CCD24D780DE0098DC07 /* FluxSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxSettings.swift; sourceTree = "<group>"; };
+		7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainerView.swift; sourceTree = "<group>"; };
+		7B1B2CD424D79E7E0098DC07 /* FluxContainersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainersViewModel.swift; sourceTree = "<group>"; };
 		7B493AF224D6EFA800E7143D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkloadNavigationView.swift; sourceTree = "<group>"; };
 		7B493AF724D7141D00E7143D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		7B493AF624D70FB300E7143D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7B1B2CD424D79E7E0098DC07 /* FluxContainersViewModel.swift */,
 				7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */,
 			);
 			path = ViewModels;
@@ -121,6 +126,7 @@
 				7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */,
 				7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */,
 				7BE0096124D60F4C00933472 /* FluxWorkloadRow.swift */,
+				7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,10 +262,12 @@
 				7BE0096024D5FB9D00933472 /* FluxWorkloadView.swift in Sources */,
 				7BE0096224D60F4C00933472 /* FluxWorkloadRow.swift in Sources */,
 				7B8E92B824D540F70083252A /* ContentView.swift in Sources */,
+				7B1B2CD524D79E7E0098DC07 /* FluxContainersViewModel.swift in Sources */,
 				7B1B2CCE24D780DE0098DC07 /* FluxSettings.swift in Sources */,
 				7B493AF824D7141D00E7143D /* Constants.swift in Sources */,
 				7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */,
 				7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */,
+				7B1B2CD324D79BF90098DC07 /* FluxContainerView.swift in Sources */,
 				7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */,
 				7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */,
 				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,

@@ -17,10 +17,10 @@ struct WorkloadNavigationView : View {
 	var fluxWorkloads: FluxWorkloadsViewModel
 	
 	var body: some View {
-		switch fluxWorkloads.workloads {
-			case .success(let workloads) where workloads.isEmpty: noWorkloadsView
-			case .success(let workloads):                         workloadsView(workloads)
-			case .failure(let error):                             errorView(error)
+		switch (fluxWorkloads.workloads, fluxWorkloads.fluxSettings) {
+			case (.success(let w),     _)      where w.isEmpty: noWorkloadsView
+			case (.success(let w),     let s): workloadsView(w, s)
+			case (.failure(let error), _):     errorView(error)
 		}
 	}
 	
@@ -36,12 +36,14 @@ struct WorkloadNavigationView : View {
 		}
 	}
 	
-	func workloadsView(_ workloads: [FluxWorkload]) -> some View {
+	func workloadsView(_ workloads: [FluxWorkload], _ fluxSettings: FluxSettings?) -> some View {
 		NavigationView{
 			List{
 				Section(header: Text("Workloads")){
-					ForEach(workloads){ workload in
-						NavigationLink(destination: FluxWorkloadView(fluxWorkload: workload)){
+					ForEach(workloads){ workload -> NavigationLink<FluxWorkloadRow, FluxWorkloadView> in
+						let model = FluxContainersViewModel(fluxSettings: fluxWorkloads.fluxSettings, workloadID: workload.id)
+						model.load()
+						return NavigationLink(destination: FluxWorkloadView(fluxWorkload: workload, fluxContainers: model)){
 							FluxWorkloadRow(workload: workload)
 						}
 					}
