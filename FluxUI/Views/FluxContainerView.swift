@@ -21,6 +21,7 @@ struct FluxContainerView : View {
 		List(fluxContainer.available ?? [], id: \.self, selection: $selectedContainer){ containerDescription in
 			Text(containerDescription.id)
 				.foregroundColor(fluxContainer.current.id == containerDescription.id ? .green : .primary)
+				.truncationMode(.head)
 		}
 	}
 	
