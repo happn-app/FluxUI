@@ -16,38 +16,33 @@ import SwiftUI
  * toolbar AFAICT 🤷‍♂️ */
 class MainWindowController : NSWindowController {
 	
-	var fluxURLs: [String] {
-		let ud = UserDefaults.standard
-		guard let urls = ud.array(forKey: Constants.UserDefaultsKeys.fluxURLs) as? [String]? else {
+	var workloadsModel = FluxWorkloadsViewModel()
+	
+	var allFluxSettings: [FluxSettings] {
+		guard let urls = UserDefaults.standard.array(forKey: Constants.UserDefaultsKeys.registeredFluxSettings) as? [FluxSettings.UserDefaultRepresentation]? else {
 			os_log(.error, "Invalid type in user defaults for Flux URLs.")
 			return []
 		}
-		return urls ?? []
+		return urls?.compactMap(FluxSettings.init(userDefaultRepresentation:)) ?? []
 	}
 	
-	var fluxURL: String? {
-		let ud = UserDefaults.standard
-		guard let urlsOrNil = ud.array(forKey: Constants.UserDefaultsKeys.fluxURLs) as? [String]? else {
-			os_log(.error, "Invalid type in user defaults for Flux URLs.")
+	var selectedFluxSettings: FluxSettings? {
+		let settings = allFluxSettings
+		let index = UserDefaults.standard.integer(forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex)
+		guard index >= 0 && index < settings.count else {
+			os_log(.error, "Invalid selected flux settings index. Returning nil.")
 			return nil
 		}
-		guard let urls = urlsOrNil else {
-			return nil
-		}
-		let index = ud.integer(forKey: Constants.UserDefaultsKeys.selectedFluxURLIndex)
-		guard index >= 0 && index < urls.count else {
-			os_log(.error, "Invalid url index for .")
-			return nil
-		}
-		return urls[index]
+		return settings[index]
 	}
 	
 	override func windowDidLoad() {
 		super.windowDidLoad()
 		
-		let model = FluxWorkloadsViewModel(fluxURL: fluxURL ?? "")
-		model.load()
-		let contentView = ContentView(fluxWorkloads: model)
+		workloadsModel.fluxSettings = selectedFluxSettings
+		workloadsModel.load()
+		
+		let contentView = ContentView(fluxWorkloads: workloadsModel)
 		window?.contentView = NSHostingView(rootView: contentView)
 	}
 	
@@ -58,8 +53,7 @@ class MainWindowController : NSWindowController {
 	}
 	
 	@IBAction func reloadFluxModel(_ sender: Any) {
-		guard let fluxURL = fluxURL else {return}
-		FluxWorkloadsViewModel(fluxURL: fluxURL).load()
+		workloadsModel.load()
 	}
 	
 	@IBAction func fluxURLSelected(_ sender: Any) {
@@ -68,23 +62,20 @@ class MainWindowController : NSWindowController {
 			return
 		}
 		
-		let index = fluxURLs.firstIndex{ $0 == menuItem.title }
-		if index == nil {
-			os_log(.error, "Cannot get index of selected menu item! Selecting first item.")
-			return
-		}
-		let ud = UserDefaults.standard
-		ud.setValue(index ?? 0, forKey: Constants.UserDefaultsKeys.selectedFluxURLIndex)
+		let index = min(allFluxSettings.count, max(0, menuItem.tag))
+		UserDefaults.standard.setValue(index, forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex)
 		updateFluxMenu()
+		
+		workloadsModel.fluxSettings = selectedFluxSettings
 		reloadFluxModel(sender)
 	}
 	
 	@IBAction func addFluxURL(_ sender: Any) {
 		let ud = UserDefaults.standard
-		let urls = ud.array(forKey: Constants.UserDefaultsKeys.fluxURLs) as? [String] ?? []
-		let modifiedURLs = NSOrderedSet(array: urls + ["http://flux-happn-console.podc.happn.io:3030/api/flux"]).array
-		ud.setValue(modifiedURLs, forKey: Constants.UserDefaultsKeys.fluxURLs)
-		ud.setValue(-1, forKey: Constants.UserDefaultsKeys.selectedFluxURLIndex) /* This will force selection of the last URL in updateFluxMenu() */
+		let settings = ud.array(forKey: Constants.UserDefaultsKeys.registeredFluxSettings) as? [FluxSettings.UserDefaultRepresentation] ?? []
+		let modifiedSettings = NSOrderedSet(array: settings + [FluxSettings(url: URL(string: "http://flux-happn-console.podc.happn.io:3030/api/flux")!, namespace: "happn-console").userDefaultRepresentation]).array
+		ud.setValue(modifiedSettings, forKey: Constants.UserDefaultsKeys.registeredFluxSettings)
+		ud.setValue(-1, forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex) /* This will force selection of the last settings in updateFluxMenu() */
 		updateFluxMenu()
 	}
 	
@@ -98,16 +89,17 @@ class MainWindowController : NSWindowController {
 		
 		fluxURLsMenu.items.filter{ $0.tag >= 0 }.forEach(fluxURLsMenu.removeItem)
 		
-		let ud = UserDefaults.standard
-		
-		for url in fluxURLs.reversed() {
-			fluxURLsMenu.insertItem(withTitle: url, action: #selector(fluxURLSelected(_:)), keyEquivalent: "", at: 0)
+		for (idx, settings) in allFluxSettings.enumerated().reversed() {
+			let menuItem = NSMenuItem(title: settings.url.absoluteString + " - " + settings.namespace, action: #selector(fluxURLSelected(_:)), keyEquivalent: "")
+			fluxURLsMenu.insertItem(menuItem, at: 0)
+			menuItem.tag = idx
 		}
 		
 		/* Now let’s select the correct Flux URL. */
 		let urlItems = fluxURLsMenu.items.filter{ $0.tag >= 0 }
 		if !urlItems.isEmpty {
-			let index = ud.integer(forKey: Constants.UserDefaultsKeys.selectedFluxURLIndex)
+			let ud = UserDefaults.standard
+			let index = ud.integer(forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex)
 			if index >= 0 && index < urlItems.count {fluxURLsPopUpButton.select(urlItems[index])}
 			else                                    {fluxURLSelected(urlItems.last!)}
 		} else {

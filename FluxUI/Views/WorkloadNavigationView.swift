@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import LegibleError
+
 
 
 struct WorkloadNavigationView : View {
@@ -26,7 +28,7 @@ struct WorkloadNavigationView : View {
 			Spacer()
 			HStack{
 				Spacer()
-				Text("\(error as NSError)")
+				Text(error.legibleLocalizedDescription)
 				Spacer()
 			}
 			Spacer()

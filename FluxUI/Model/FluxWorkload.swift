@@ -14,6 +14,7 @@ struct FluxWorkload : Decodable, Identifiable {
 	enum Status : String, Decodable {
 		
 		case ready
+		case updating
 		
 	}
 	

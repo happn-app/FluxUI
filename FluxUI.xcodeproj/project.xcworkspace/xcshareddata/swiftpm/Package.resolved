@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "LegibleError",
+        "repositoryURL": "https://github.com/mxcl/LegibleError.git",
+        "state": {
+          "branch": null,
+          "revision": "909e9bab3ded97350b28a5ab41dd745dd8aa9710",
+          "version": "1.0.4"
+        }
+      },
+      {
         "package": "swift-log",
         "repositoryURL": "https://github.com/apple/swift-log.git",
         "state": {

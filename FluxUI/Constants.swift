@@ -15,8 +15,8 @@ enum Constants {
 	
 	enum UserDefaultsKeys {
 		
-		static let fluxURLs = "HPN Flux URLs"
-		static let selectedFluxURLIndex = "HPN Selected Flux URL Index"
+		static let registeredFluxSettings = "HPN Registered Flux Settings"
+		static let selectedFluxSettingsIndex = "HPN Selected Flux Settings Index"
 		
 	}
 	

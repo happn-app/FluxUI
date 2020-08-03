@@ -9,8 +9,16 @@ import Foundation
 
 
 
-struct SimpleError : Error {
+struct SimpleError : Error, CustomStringConvertible, CustomDebugStringConvertible {
 	
 	var message: String
+	
+	var description: String {
+		return message
+	}
+	
+	var debugDescription: String {
+		return "SimpleError: \(message)"
+	}
 	
 }

@@ -13,15 +13,23 @@ import SwiftUI
 
 class FluxWorkloadsViewModel : ObservableObject {
 	
-	var fluxURL: String
-	
-	@Published var workloads = Result<[FluxWorkload], Error>.success([])
-	
-	init(fluxURL url: String) {
-		fluxURL = url
+	var fluxSettings: FluxSettings? {
+		didSet {
+			assert(Thread.isMainThread)
+			workloads = .success([])
+		}
 	}
 	
+	@Published
+	var workloads = Result<[FluxWorkload], Error>.success([])
+	
 	func load() {
+		assert(Thread.isMainThread)
+		guard let fluxSettings = fluxSettings else {
+			workloads = .failure(SimpleError(message: "No Flux URL."))
+			return
+		}
+		
 		loadQueue.async{
 			guard !self.isLoading else {return}
 			self.isLoading = true
@@ -34,7 +42,7 @@ class FluxWorkloadsViewModel : ObservableObject {
 				
 				let p = Process()
 				p.executableURL = executableURL
-				p.arguments = ["--url", self.fluxURL, "--output-format", "json", "list-workloads", "--namespace", "happn-console"]
+				p.arguments = ["--url", fluxSettings.url.absoluteString, "--output-format", "json", "list-workloads", "--namespace", fluxSettings.namespace]
 				
 				let pipe = Pipe()
 				p.standardOutput = pipe

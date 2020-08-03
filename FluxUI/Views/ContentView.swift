@@ -11,7 +11,8 @@ import SwiftUI
 
 struct ContentView : View {
 	
-	@ObservedObject var fluxWorkloads: FluxWorkloadsViewModel
+	@ObservedObject
+	var fluxWorkloads: FluxWorkloadsViewModel
 	
 	var body: some View {
 		WorkloadNavigationView(fluxWorkloads: fluxWorkloads)
