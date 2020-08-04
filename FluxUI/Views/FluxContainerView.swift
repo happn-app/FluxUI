@@ -27,7 +27,7 @@ struct FluxContainerView : View {
 	
 	func color(for container: FluxContainer.ContainerDescription) -> Color? {
 		if container.id == fluxContainer.current.id {
-			return .green
+			return Color("CurrentContainerVersion")
 		} else {
 			return nil
 		}
