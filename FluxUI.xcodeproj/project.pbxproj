@@ -124,8 +124,8 @@
 				7B8E930924D542D60083252A /* Main.storyboard */,
 				7B8E92B724D540F70083252A /* ContentView.swift */,
 				7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */,
-				7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */,
 				7BE0096124D60F4C00933472 /* FluxWorkloadRow.swift */,
+				7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */,
 				7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */,
 			);
 			path = Views;

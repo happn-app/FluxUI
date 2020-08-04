@@ -37,7 +37,7 @@ struct WorkloadNavigationView : View {
 				}
 			}
 			.listStyle(SidebarListStyle())
-			.frame(minWidth: 175)
+			.frame(minWidth: 250)
 		}.navigationViewStyle(DoubleColumnNavigationViewStyle())
 	}
 	

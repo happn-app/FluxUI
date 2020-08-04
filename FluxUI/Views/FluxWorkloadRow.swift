@@ -16,10 +16,15 @@ struct FluxWorkloadRow : View {
 	var workload: FluxWorkload
 	
 	var body: some View {
-		Text(workload.id.split(separator: "/").last!)
-			.bold()
-			.foregroundColor(workload.isReadOnly ? .secondary : nil)
-			.truncationMode(.head)
+		HStack{
+			Text(workload.id.split(separator: "/").last!)
+				.bold()
+				.truncationMode(.head)
+			if workload.isReadOnly {
+				Text("🔐")
+			}
+			Text("(\(workload.rollout.available)/\(workload.rollout.desired))")
+		}
 	}
 	
 }
