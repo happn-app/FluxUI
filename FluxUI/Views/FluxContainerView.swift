@@ -25,12 +25,11 @@ struct FluxContainerView : View {
 		}
 	}
 	
-	func color(for container: FluxContainer.ContainerDescription) -> Color {
-		let isSelected = container == selectedContainer
+	func color(for container: FluxContainer.ContainerDescription) -> Color? {
 		if container.id == fluxContainer.current.id {
 			return .green
 		} else {
-			return isSelected ? .white : .primary
+			return nil
 		}
 	}
 	
