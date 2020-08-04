@@ -28,9 +28,11 @@ struct WorkloadNavigationView : View {
 		NavigationView{
 			List{
 				Section(header: Text("Workloads")){
-					ForEach(workloads){ workload -> NavigationLink<FluxWorkloadRow, FluxWorkloadView> in
+					ForEach(workloads){ workload -> NavigationLink<FluxWorkloadRow, LazyView<FluxWorkloadView>> in
 						let model = FluxContainersViewModel(fluxSettings: fluxWorkloads.fluxSettings, workloadID: workload.id)
-						return NavigationLink(destination: FluxWorkloadView(fluxWorkload: workload, fluxContainers: model)){
+						/* The LazyView is not strictly required but I think it’s
+						 * better w/ it. */
+						return NavigationLink(destination: LazyView(FluxWorkloadView(fluxWorkload: workload, fluxContainers: model))){
 							FluxWorkloadRow(workload: workload)
 						}
 					}

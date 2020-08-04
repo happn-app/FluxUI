@@ -24,6 +24,7 @@
 		7B8E92B824D540F70083252A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E92B724D540F70083252A /* ContentView.swift */; };
 		7B8E92BA24D540F80083252A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E92B924D540F80083252A /* Assets.xcassets */; };
 		7B8E930724D542D60083252A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E930924D542D60083252A /* Main.storyboard */; };
+		7BCA81E824D97BA1009CD76F /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA81E724D97BA1009CD76F /* LazyView.swift */; };
 		7BE0095624D5857100933472 /* XibLoc in Frameworks */ = {isa = PBXBuildFile; productRef = 7BE0095524D5857100933472 /* XibLoc */; };
 		7BE0095924D5860C00933472 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0095724D5860C00933472 /* Localizable.strings */; };
 		7BE0096024D5FB9D00933472 /* FluxWorkloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */; };
@@ -67,6 +68,7 @@
 		7B8E92BE24D540F80083252A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8E92BF24D540F80083252A /* FluxUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FluxUI.entitlements; sourceTree = "<group>"; };
 		7B8E930824D542D60083252A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7BCA81E724D97BA1009CD76F /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		7BE0095824D5860C00933472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7BE0095A24D5862900933472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		7BE0095B24D588CC00933472 /* images.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				7BE0096124D60F4C00933472 /* FluxWorkloadRow.swift */,
 				7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */,
 				7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */,
+				7BCA81E724D97BA1009CD76F /* LazyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				7B493AF524D6F90600E7143D /* WorkloadNavigationView.swift in Sources */,
 				7BE0096024D5FB9D00933472 /* FluxWorkloadView.swift in Sources */,
 				7BE0096224D60F4C00933472 /* FluxWorkloadRow.swift in Sources */,
+				7BCA81E824D97BA1009CD76F /* LazyView.swift in Sources */,
 				7B8E92B824D540F70083252A /* ContentView.swift in Sources */,
 				7B1B2CD524D79E7E0098DC07 /* FluxContainersViewModel.swift in Sources */,
 				7B1B2CCE24D780DE0098DC07 /* FluxSettings.swift in Sources */,
