@@ -17,32 +17,19 @@ struct WorkloadNavigationView : View {
 	var fluxWorkloads: FluxWorkloadsViewModel
 	
 	var body: some View {
-		switch (fluxWorkloads.workloads, fluxWorkloads.fluxSettings) {
-			case (.success(let w),     _)      where w.isEmpty: noWorkloadsView
-			case (.success(let w),     let s): workloadsView(w, s)
-			case (.failure(let error), _):     errorView(error)
+		switch fluxWorkloads.workloads {
+			case .success(let w) where w.isEmpty: noWorkloadsView
+			case .success(let w):                 workloadsView(w)
+			case .failure(let error):             errorView(error)
 		}
 	}
 	
-	func errorView(_ error: Error) -> some View {
-		VStack{
-			Spacer()
-			HStack{
-				Spacer()
-				Text(error.legibleLocalizedDescription)
-				Spacer()
-			}
-			Spacer()
-		}
-	}
-	
-	func workloadsView(_ workloads: [FluxWorkload], _ fluxSettings: FluxSettings?) -> some View {
+	func workloadsView(_ workloads: [FluxWorkload]) -> some View {
 		NavigationView{
 			List{
 				Section(header: Text("Workloads")){
 					ForEach(workloads){ workload -> NavigationLink<FluxWorkloadRow, FluxWorkloadView> in
 						let model = FluxContainersViewModel(fluxSettings: fluxWorkloads.fluxSettings, workloadID: workload.id)
-						model.load()
 						return NavigationLink(destination: FluxWorkloadView(fluxWorkload: workload, fluxContainers: model)){
 							FluxWorkloadRow(workload: workload)
 						}
@@ -60,6 +47,18 @@ struct WorkloadNavigationView : View {
 			HStack{
 				Spacer()
 				Text("No workloads found.").font(.title).bold()
+				Spacer()
+			}
+			Spacer()
+		}
+	}
+	
+	func errorView(_ error: Error) -> some View {
+		VStack{
+			Spacer()
+			HStack{
+				Spacer()
+				Text(error.legibleLocalizedDescription)
 				Spacer()
 			}
 			Spacer()

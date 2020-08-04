@@ -22,11 +22,22 @@ struct FluxWorkloadView : View {
 				Text(fluxWorkload.id).font(.title).padding()
 				Spacer()
 			}
+			HStack{
+				Text("Status: \(fluxWorkload.status.rawValue)").padding(.leading)
+				Spacer()
+			}
+			HStack{
+				Text("Rollout: desired \(fluxWorkload.rollout.desired), updated \(fluxWorkload.rollout.updated), ready \(fluxWorkload.rollout.ready), available \(fluxWorkload.rollout.available), outdated \(fluxWorkload.rollout.outdated)").padding(.leading)
+				Spacer()
+			}
 			switch fluxContainers.containers {
 				case .success(let containers) where containers.isEmpty: noContainersView
 				case .success(let containers):                          containersView(containers)
 				case .failure(let error):                               errorView(error)
 			}
+		}
+		.onAppear{
+			fluxContainers.load()
 		}
 	}
 	
