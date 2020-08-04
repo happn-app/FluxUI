@@ -20,8 +20,17 @@ struct FluxContainerView : View {
 	var body: some View {
 		List(fluxContainer.available ?? [], id: \.self, selection: $selectedContainer){ containerDescription in
 			Text(containerDescription.id)
-				.foregroundColor(fluxContainer.current.id == containerDescription.id ? .green : .primary)
+				.foregroundColor(color(for: containerDescription))
 				.truncationMode(.head)
+		}
+	}
+	
+	func color(for container: FluxContainer.ContainerDescription) -> Color {
+		let isSelected = container == selectedContainer
+		if container.id == fluxContainer.current.id {
+			return .green
+		} else {
+			return isSelected ? .white : .primary
 		}
 	}
 	
