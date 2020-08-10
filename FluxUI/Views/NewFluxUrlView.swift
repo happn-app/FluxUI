@@ -29,7 +29,7 @@ struct NewFluxUrlView : View {
 		Form{
 			HStack{ Text("URL:"); TextField("", text: $model.url) }
 			HStack{ Text("Namespace:"); TextField("", text: $model.namespace) }
-			Button("Add", action: action)
+			HStack{ Spacer(); Button("Add", action: action) }
 		}
 		.padding()
 	}
