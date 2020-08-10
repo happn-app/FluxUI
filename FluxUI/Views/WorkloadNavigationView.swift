@@ -32,7 +32,7 @@ struct WorkloadNavigationView : View {
 						let model = FluxContainersViewModel(fluxSettings: fluxWorkloads.fluxSettings, workloadID: workload.id)
 						/* The LazyView is not strictly required but I think it’s
 						 * better w/ it. */
-						return NavigationLink(destination: LazyView(FluxWorkloadView(fluxWorkload: workload, fluxContainers: model))){
+						return NavigationLink(destination: LazyView(FluxWorkloadView(fluxSettings: fluxWorkloads.fluxSettings, fluxWorkload: workload, fluxContainers: model))){
 							FluxWorkloadRow(workload: workload)
 						}
 					}

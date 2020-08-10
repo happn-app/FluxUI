@@ -42,6 +42,7 @@ class FluxWorkloadsViewModel : ObservableObject {
 				
 				let p = Process()
 				p.executableURL = executableURL
+				// http://flux-vonage-sms-hook.poda.happn.io:3030/api/flux/v6/services?namespace=vonage-sms-hook
 				p.arguments = ["--url", fluxSettings.url.absoluteString, "--output-format", "json", "list-workloads", "--namespace", fluxSettings.namespace]
 				
 				let pipe = Pipe()
@@ -66,6 +67,6 @@ class FluxWorkloadsViewModel : ObservableObject {
 	}
 	
 	private var isLoading = false
-	private let loadQueue = DispatchQueue(label: Constants.appBundleId + ".workload-fetch-queue")
+	private let loadQueue = DispatchQueue(label: Constants.appBundleId + ".workloads-fetch-queue")
 	
 }

@@ -17,6 +17,8 @@
 		7B493AF824D7141D00E7143D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF724D7141D00E7143D /* Constants.swift */; };
 		7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */; };
 		7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AFE24D7445B00E7143D /* SimpleError.swift */; };
+		7B50453C24DAB7EC003F01B1 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50453B24DAB7EC003F01B1 /* ActivityIndicatorView.swift */; };
+		7B50453E24DAC557003F01B1 /* DeployViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50453D24DAC557003F01B1 /* DeployViewModel.swift */; };
 		7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F2E24D57F6B001CD010 /* FluxImage.swift */; };
 		7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3024D57FD2001CD010 /* FluxContainer.swift */; };
 		7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3224D581E3001CD010 /* FluxWorkload.swift */; };
@@ -57,6 +59,8 @@
 		7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkloadsViewModel.swift; sourceTree = "<group>"; };
 		7B493AFB24D7431700E7143D /* fluxctl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = fluxctl; sourceTree = "<group>"; };
 		7B493AFE24D7445B00E7143D /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
+		7B50453B24DAB7EC003F01B1 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		7B50453D24DAC557003F01B1 /* DeployViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployViewModel.swift; sourceTree = "<group>"; };
 		7B643F2E24D57F6B001CD010 /* FluxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxImage.swift; sourceTree = "<group>"; };
 		7B643F3024D57FD2001CD010 /* FluxContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainer.swift; sourceTree = "<group>"; };
 		7B643F3224D581E3001CD010 /* FluxWorkload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkload.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		7B493AF624D70FB300E7143D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7B50453D24DAC557003F01B1 /* DeployViewModel.swift */,
 				7B1B2CD424D79E7E0098DC07 /* FluxContainersViewModel.swift */,
 				7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */,
 			);
@@ -130,6 +135,7 @@
 				7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */,
 				7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */,
 				7BCA81E724D97BA1009CD76F /* LazyView.swift */,
+				7B50453B24DAB7EC003F01B1 /* ActivityIndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +282,8 @@
 				7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */,
 				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,
 				7B493AF324D6EFA800E7143D /* MainWindowController.swift in Sources */,
+				7B50453C24DAB7EC003F01B1 /* ActivityIndicatorView.swift in Sources */,
+				7B50453E24DAC557003F01B1 /* DeployViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

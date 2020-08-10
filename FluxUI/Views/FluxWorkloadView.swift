@@ -11,6 +11,8 @@ import SwiftUI
 
 struct FluxWorkloadView : View {
 	
+	var fluxSettings: FluxSettings?
+	
 	var fluxWorkload: FluxWorkload
 	
 	@ObservedObject
@@ -56,7 +58,7 @@ struct FluxWorkloadView : View {
 	func containersView(_ containers: [FluxContainer]) -> some View {
 		TabView{
 			ForEach(containers, id: \.name){ container in
-				FluxContainerView(fluxContainer: container)
+				FluxContainerView(fluxContainer: container, parentWorkload: fluxWorkload, settings: fluxSettings)
 					.tabItem{ Text(container.name) }
 			}
 		}
