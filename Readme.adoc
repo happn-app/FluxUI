@@ -1,0 +1,5 @@
+= FluxUI
+François Lamboley <francois.lamboley@happn.com>
+
+A UI for your Flux-based deployments. +
+This project is still in pre-Alpha release stage! Use at your own risks 😉
