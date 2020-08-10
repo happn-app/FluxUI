@@ -61,6 +61,8 @@
 		7B493AFE24D7445B00E7143D /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		7B50453B24DAB7EC003F01B1 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		7B50453D24DAC557003F01B1 /* DeployViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployViewModel.swift; sourceTree = "<group>"; };
+		7B529BF724E186D70080F3AF /* Readme.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.adoc; sourceTree = "<group>"; };
+		7B529BF824E186D70080F3AF /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		7B643F2E24D57F6B001CD010 /* FluxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxImage.swift; sourceTree = "<group>"; };
 		7B643F3024D57FD2001CD010 /* FluxContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainer.swift; sourceTree = "<group>"; };
 		7B643F3224D581E3001CD010 /* FluxWorkload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkload.swift; sourceTree = "<group>"; };
@@ -143,10 +145,15 @@
 		7B8E92A924D540F70083252A = {
 			isa = PBXGroup;
 			children = (
+				7B529BF824E186D70080F3AF /* License.txt */,
+				7B529BF724E186D70080F3AF /* Readme.adoc */,
 				7B8E92B424D540F70083252A /* FluxUI */,
 				7B8E92B324D540F70083252A /* Products */,
 			);
+			indentWidth = 3;
 			sourceTree = "<group>";
+			tabWidth = 3;
+			usesTabs = 1;
 		};
 		7B8E92B324D540F70083252A /* Products */ = {
 			isa = PBXGroup;
@@ -217,6 +224,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = happn;
 				TargetAttributes = {
 					7B8E92B124D540F70083252A = {
 						CreatedOnToolsVersion = 12.0;
