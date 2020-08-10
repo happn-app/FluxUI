@@ -109,6 +109,20 @@ class MainWindowController : NSWindowController {
 		window?.beginSheet(newFluxUrlWindow, completionHandler: nil)
 	}
 	
+	@IBAction func removeFluxURL(_ sender: Any) {
+		let ud = UserDefaults.standard
+		
+		let index = UserDefaults.standard.integer(forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex)
+		var settings = ud.array(forKey: Constants.UserDefaultsKeys.registeredFluxSettings) as? [FluxSettings.UserDefaultRepresentation] ?? []
+		guard index >= 0, index < settings.count else {return}
+		
+		settings.remove(at: index)
+		ud.setValue(settings, forKey: Constants.UserDefaultsKeys.registeredFluxSettings)
+		ud.setValue(max(index, settings.count-1), forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex)
+		
+		updateFluxMenu()
+	}
+	
 	private func updateFluxMenu() {
 		guard
 			let fluxURLsPopUpButton = window?.toolbar?.items.first(where: { $0.itemIdentifier.rawValue == "FluxURLs" })?.view as? NSPopUpButton,
