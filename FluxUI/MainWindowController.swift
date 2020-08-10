@@ -79,12 +79,34 @@ class MainWindowController : NSWindowController {
 	}
 	
 	@IBAction func addFluxURL(_ sender: Any) {
-		let ud = UserDefaults.standard
-		let settings = ud.array(forKey: Constants.UserDefaultsKeys.registeredFluxSettings) as? [FluxSettings.UserDefaultRepresentation] ?? []
-		let modifiedSettings = NSOrderedSet(array: settings + [FluxSettings(url: URL(string: "http://flux-happn-console.podc.happn.io:3030/api/flux")!, namespace: "happn-console").userDefaultRepresentation]).array
-		ud.setValue(modifiedSettings, forKey: Constants.UserDefaultsKeys.registeredFluxSettings)
-		ud.setValue(-1, forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex) /* This will force selection of the last settings in updateFluxMenu() */
-		updateFluxMenu()
+		let newFluxUrlWindow = NSWindow(
+			contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+			styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+			backing: .buffered, defer: false
+		)
+		
+		/* Create the SwiftUI view that provides the window contents. */
+		let model = NewFluxUrlViewModel()
+		let newFluxUrlView = NewFluxUrlView(model: model, action: {
+			self.window?.endSheet(newFluxUrlWindow)
+			
+			guard let url = URL(string: model.url) else {
+				NSLog("%@", "Invalid URL given: \(model.url)")
+				return
+			}
+			
+			let ud = UserDefaults.standard
+			let settings = ud.array(forKey: Constants.UserDefaultsKeys.registeredFluxSettings) as? [FluxSettings.UserDefaultRepresentation] ?? []
+			let modifiedSettings = NSOrderedSet(array: settings + [FluxSettings(url: url, namespace: model.namespace).userDefaultRepresentation]).array
+			ud.setValue(modifiedSettings, forKey: Constants.UserDefaultsKeys.registeredFluxSettings)
+			ud.setValue(-1, forKey: Constants.UserDefaultsKeys.selectedFluxSettingsIndex) /* This will force selection of the last settings in updateFluxMenu() */
+			self.updateFluxMenu()
+		})
+		
+		/* Create the window and set the content view. */
+		newFluxUrlWindow.isReleasedWhenClosed = false
+		newFluxUrlWindow.contentView = NSHostingView(rootView: newFluxUrlView)
+		window?.beginSheet(newFluxUrlWindow, completionHandler: nil)
 	}
 	
 	private func updateFluxMenu() {

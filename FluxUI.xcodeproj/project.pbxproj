@@ -19,6 +19,8 @@
 		7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B493AFE24D7445B00E7143D /* SimpleError.swift */; };
 		7B50453C24DAB7EC003F01B1 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50453B24DAB7EC003F01B1 /* ActivityIndicatorView.swift */; };
 		7B50453E24DAC557003F01B1 /* DeployViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50453D24DAC557003F01B1 /* DeployViewModel.swift */; };
+		7B529BFF24E188C20080F3AF /* NewFluxUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B529BFE24E188C20080F3AF /* NewFluxUrlView.swift */; };
+		7B529C0124E189290080F3AF /* NewFluxUrlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B529C0024E189290080F3AF /* NewFluxUrlViewModel.swift */; };
 		7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F2E24D57F6B001CD010 /* FluxImage.swift */; };
 		7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3024D57FD2001CD010 /* FluxContainer.swift */; };
 		7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3224D581E3001CD010 /* FluxWorkload.swift */; };
@@ -63,6 +65,8 @@
 		7B50453D24DAC557003F01B1 /* DeployViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployViewModel.swift; sourceTree = "<group>"; };
 		7B529BF724E186D70080F3AF /* Readme.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.adoc; sourceTree = "<group>"; };
 		7B529BF824E186D70080F3AF /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		7B529BFE24E188C20080F3AF /* NewFluxUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFluxUrlView.swift; sourceTree = "<group>"; };
+		7B529C0024E189290080F3AF /* NewFluxUrlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFluxUrlViewModel.swift; sourceTree = "<group>"; };
 		7B643F2E24D57F6B001CD010 /* FluxImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxImage.swift; sourceTree = "<group>"; };
 		7B643F3024D57FD2001CD010 /* FluxContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContainer.swift; sourceTree = "<group>"; };
 		7B643F3224D581E3001CD010 /* FluxWorkload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkload.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 		7B493AF624D70FB300E7143D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7B529C0024E189290080F3AF /* NewFluxUrlViewModel.swift */,
 				7B50453D24DAC557003F01B1 /* DeployViewModel.swift */,
 				7B1B2CD424D79E7E0098DC07 /* FluxContainersViewModel.swift */,
 				7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */,
@@ -136,6 +141,7 @@
 				7BE0096124D60F4C00933472 /* FluxWorkloadRow.swift */,
 				7BE0095F24D5FB9C00933472 /* FluxWorkloadView.swift */,
 				7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */,
+				7B529BFE24E188C20080F3AF /* NewFluxUrlView.swift */,
 				7BCA81E724D97BA1009CD76F /* LazyView.swift */,
 				7B50453B24DAB7EC003F01B1 /* ActivityIndicatorView.swift */,
 			);
@@ -283,8 +289,10 @@
 				7B1B2CD524D79E7E0098DC07 /* FluxContainersViewModel.swift in Sources */,
 				7B1B2CCE24D780DE0098DC07 /* FluxSettings.swift in Sources */,
 				7B493AF824D7141D00E7143D /* Constants.swift in Sources */,
+				7B529BFF24E188C20080F3AF /* NewFluxUrlView.swift in Sources */,
 				7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */,
 				7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */,
+				7B529C0124E189290080F3AF /* NewFluxUrlViewModel.swift in Sources */,
 				7B1B2CD324D79BF90098DC07 /* FluxContainerView.swift in Sources */,
 				7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */,
 				7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */,
