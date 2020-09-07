@@ -64,8 +64,8 @@ class FluxContainersViewModel : ObservableObject {
 				
 				let p = Process()
 				p.executableURL = executableURL
-				// http://flux-vonage-sms-hook.poda.happn.io:3030/api/flux/v10/images?containerFields=&namespace=&service=vonage-sms-hook%3Adeployment%2Fflux
-				p.arguments = ["--url", fluxSettings.url.absoluteString, "--output-format", "json", "list-images", "--limit", "0", "--namespace", fluxSettings.namespace, "--workload", workloadID]
+				// limit not set in this URL; TODO http://flux-vonage-sms-hook.poda.happn.io:3030/api/flux/v10/images?containerFields=&namespace=&service=vonage-sms-hook%3Adeployment%2Fflux
+				p.arguments = ["--url", fluxSettings.url.absoluteString, "--output-format", "json", "list-images", "--limit", "50", "--namespace", fluxSettings.namespace, "--workload", workloadID]
 				
 				let pipe = Pipe()
 				p.standardOutput = pipe
