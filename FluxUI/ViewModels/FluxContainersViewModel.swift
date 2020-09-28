@@ -17,6 +17,8 @@ import Combine
 import Foundation
 import SwiftUI
 
+import Alamofire
+
 
 
 class FluxContainersViewModel : ObservableObject {
@@ -55,41 +57,20 @@ class FluxContainersViewModel : ObservableObject {
 		loadQueue.async{
 			guard !self.isLoading else {return}
 			self.isLoading = true
-			defer {self.isLoading = false}
 			
-			do {
-				guard let executableURL = Bundle(for: type(of: self)).url(forAuxiliaryExecutable: "fluxctl") else {
-					throw SimpleError(message: "Internal error: Cannot find fluxctl, which is annoying because it should be built-in FluxUI!")
+			AF.request(fluxSettings.url.appendingPathComponent("v10").appendingPathComponent("images"), parameters: ["containerFields": "", "namespace": "", "service": workloadID])
+				.responseDecodable(of: [FluxImage].self, queue: self.loadQueue){ response in
+					let ret: Result<[FluxContainer], Error> = response.result.flatMapError{ .failure($0 as Error) }.flatMap{ images in
+						guard images.count == 1, let image = images.first, image.id == workloadID else {
+							return .failure(SimpleError(message: "Internal error: Asked for a specific workload id, but got more than one image for this workload. Which means either Flux has a bug, or I did not understand the model it uses."))
+						}
+						return .success(image.containers)
+					}
+					DispatchQueue.main.sync{
+						self.containers = ret
+					}
+					self.isLoading = false
 				}
-				
-				let p = Process()
-				p.executableURL = executableURL
-				// limit not set in this URL; TODO http://flux-vonage-sms-hook.poda.happn.io:3030/api/flux/v10/images?containerFields=&namespace=&service=vonage-sms-hook%3Adeployment%2Fflux
-				p.arguments = ["--url", fluxSettings.url.absoluteString, "--output-format", "json", "list-images", "--limit", "50", "--namespace", fluxSettings.namespace, "--workload", workloadID]
-				
-				let pipe = Pipe()
-				p.standardOutput = pipe
-				
-				p.launch()
-				p.waitUntilExit()
-				
-				guard let data = try pipe.fileHandleForReading.readToEnd() else {
-					throw SimpleError(message: "Did not get any data from fluxctl")
-				}
-				
-				let images = try JSONDecoder().decode([FluxImage].self, from: data)
-				guard images.count == 1, let image = images.first, image.id == workloadID else {
-					throw SimpleError(message: "Internal error: Asked for a specific workload id, but got more than one image for this workload. Which means either Flux has a bug, or I did not understand the model it uses.")
-				}
-				
-				DispatchQueue.main.sync{
-					self.containers = .success(image.containers)
-				}
-			} catch {
-				DispatchQueue.main.sync{
-					self.containers = .failure(error)
-				}
-			}
 		}
 	}
 	

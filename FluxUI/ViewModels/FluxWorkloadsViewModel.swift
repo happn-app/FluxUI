@@ -17,6 +17,8 @@ import Combine
 import Foundation
 import SwiftUI
 
+import Alamofire
+
 
 
 class FluxWorkloadsViewModel : ObservableObject {
@@ -41,36 +43,14 @@ class FluxWorkloadsViewModel : ObservableObject {
 		loadQueue.async{
 			guard !self.isLoading else {return}
 			self.isLoading = true
-			defer {self.isLoading = false}
 			
-			do {
-				guard let executableURL = Bundle(for: type(of: self)).url(forAuxiliaryExecutable: "fluxctl") else {
-					throw SimpleError(message: "Internal error: Cannot find fluxctl, which is annoying because it should be built-in FluxUI!")
+			AF.request(fluxSettings.url.appendingPathComponent("v6").appendingPathComponent("services"), parameters: ["namespace": fluxSettings.namespace])
+				.responseDecodable(of: [FluxWorkload].self, queue: self.loadQueue){ response in
+					DispatchQueue.main.sync{
+						self.workloads = response.result.flatMapError{ .failure($0 as Error) }
+					}
+					self.isLoading = false
 				}
-				
-				let p = Process()
-				p.executableURL = executableURL
-				// http://flux-vonage-sms-hook.poda.happn.io:3030/api/flux/v6/services?namespace=vonage-sms-hook
-				p.arguments = ["--url", fluxSettings.url.absoluteString, "--output-format", "json", "list-workloads", "--namespace", fluxSettings.namespace]
-				
-				let pipe = Pipe()
-				p.standardOutput = pipe
-				
-				p.launch()
-				p.waitUntilExit()
-				
-				guard let data = try pipe.fileHandleForReading.readToEnd() else {
-					throw SimpleError(message: "Did not get any data from fluxctl.")
-				}
-				let decoded = try JSONDecoder().decode([FluxWorkload].self, from: data)
-				DispatchQueue.main.sync{
-					self.workloads = .success(decoded)
-				}
-			} catch {
-				DispatchQueue.main.sync{
-					self.workloads = .failure(error)
-				}
-			}
 		}
 	}
 	
