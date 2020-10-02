@@ -16,6 +16,8 @@ limitations under the License. */
 import Foundation
 import SwiftUI
 
+import LegibleError
+
 
 
 struct FluxContainerView : View {
@@ -33,7 +35,7 @@ struct FluxContainerView : View {
 	
 	init(fluxContainer fc: FluxContainer, parentWorkload w: FluxWorkload, settings: FluxSettings?) {
 		fluxContainer = fc
-		deployViewModel = DeployViewModel(fluxSettings: nil, workloadID: w.id)
+		deployViewModel = DeployViewModel(fluxSettings: settings, workloadID: w.id)
 	}
 	
 	var body: some View {
@@ -63,7 +65,7 @@ struct FluxContainerView : View {
 						HStack{ Spacer(); Button("OK"){ deployViewModel.aknowledgeDeployment() }/*macOS 11: .keyboardShortcut(.defaultAction)*/ }
 						
 					case .deployed(.failure(let error)):
-						Text("Error deploying the release: " + error.localizedDescription)
+						Text("Error deploying the release: " + error.legibleLocalizedDescription)
 							.lineLimit(nil)
 							.multilineTextAlignment(.center)
 							.fixedSize()

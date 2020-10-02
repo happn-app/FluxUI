@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B1B2CCC24D74F3B0098DC07 /* fluxctl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B493AFB24D7431700E7143D /* fluxctl */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7B1B2CCE24D780DE0098DC07 /* FluxSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B2CCD24D780DE0098DC07 /* FluxSettings.swift */; };
 		7B1B2CD124D78B210098DC07 /* LegibleError in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1B2CD024D78B210098DC07 /* LegibleError */; };
 		7B1B2CD324D79BF90098DC07 /* FluxContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B2CD224D79BF90098DC07 /* FluxContainerView.swift */; };
@@ -21,6 +20,7 @@
 		7B50453E24DAC557003F01B1 /* DeployViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50453D24DAC557003F01B1 /* DeployViewModel.swift */; };
 		7B529BFF24E188C20080F3AF /* NewFluxUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B529BFE24E188C20080F3AF /* NewFluxUrlView.swift */; };
 		7B529C0124E189290080F3AF /* NewFluxUrlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B529C0024E189290080F3AF /* NewFluxUrlViewModel.swift */; };
+		7B5E380E25221EF8009A5B4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B5E380D25221EF8009A5B4C /* Alamofire */; };
 		7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F2E24D57F6B001CD010 /* FluxImage.swift */; };
 		7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3024D57FD2001CD010 /* FluxContainer.swift */; };
 		7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F3224D581E3001CD010 /* FluxWorkload.swift */; };
@@ -37,19 +37,6 @@
 		7BE0096424D6E8D300933472 /* workloads.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0095D24D588F800933472 /* workloads.json */; };
 		7BE0096524D6E8D500933472 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E92BC24D540F80083252A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7B1B2CCB24D74F350098DC07 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				7B1B2CCC24D74F3B0098DC07 /* fluxctl in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7B1B2CCD24D780DE0098DC07 /* FluxSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxSettings.swift; sourceTree = "<group>"; };
@@ -92,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5E380E25221EF8009A5B4C /* Alamofire in Frameworks */,
 				7B1B2CD124D78B210098DC07 /* LegibleError in Frameworks */,
 				7BE0095624D5857100933472 /* XibLoc in Frameworks */,
 			);
@@ -207,7 +195,6 @@
 				7B8E92AE24D540F70083252A /* Sources */,
 				7B8E92AF24D540F70083252A /* Frameworks */,
 				7B8E92B024D540F70083252A /* Resources */,
-				7B1B2CCB24D74F350098DC07 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -217,6 +204,7 @@
 			packageProductDependencies = (
 				7BE0095524D5857100933472 /* XibLoc */,
 				7B1B2CD024D78B210098DC07 /* LegibleError */,
+				7B5E380D25221EF8009A5B4C /* Alamofire */,
 			);
 			productName = FluxUI;
 			productReference = 7B8E92B224D540F70083252A /* FluxUI.app */;
@@ -249,6 +237,7 @@
 			packageReferences = (
 				7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */,
 				7B1B2CCF24D78B210098DC07 /* XCRemoteSwiftPackageReference "LegibleError" */,
+				7B5E380C25221EF8009A5B4C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7B8E92B324D540F70083252A /* Products */;
 			projectDirPath = "";
@@ -444,7 +433,6 @@
 		7B8E92C324D540F80083252A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FluxUI/FluxUI.entitlements;
@@ -473,7 +461,6 @@
 		7B8E92C424D540F80083252A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FluxUI/FluxUI.entitlements;
@@ -531,6 +518,14 @@
 				minimumVersion = 1.0.4;
 			};
 		};
+		7B5E380C25221EF8009A5B4C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 		7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/happn-tech/XibLoc.git";
@@ -546,6 +541,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B1B2CCF24D78B210098DC07 /* XCRemoteSwiftPackageReference "LegibleError" */;
 			productName = LegibleError;
+		};
+		7B5E380D25221EF8009A5B4C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B5E380C25221EF8009A5B4C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		7BE0095524D5857100933472 /* XibLoc */ = {
 			isa = XCSwiftPackageProductDependency;
