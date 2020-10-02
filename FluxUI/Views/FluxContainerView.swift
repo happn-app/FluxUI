@@ -33,7 +33,7 @@ struct FluxContainerView : View {
 	
 	init(fluxContainer fc: FluxContainer, parentWorkload w: FluxWorkload, settings: FluxSettings?) {
 		fluxContainer = fc
-		deployViewModel = DeployViewModel(fluxSettings: nil, workloadID: w.id)
+		deployViewModel = DeployViewModel(fluxSettings: settings, workloadID: w.id)
 	}
 	
 	var body: some View {
