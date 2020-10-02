@@ -15,6 +15,8 @@ limitations under the License. */
 
 import SwiftUI
 
+import LegibleError
+
 
 
 struct FluxWorkloadView : View {
