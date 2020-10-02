@@ -46,7 +46,6 @@
 		7B493AF424D6F90600E7143D /* WorkloadNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkloadNavigationView.swift; sourceTree = "<group>"; };
 		7B493AF724D7141D00E7143D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B493AF924D73E1100E7143D /* FluxWorkloadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxWorkloadsViewModel.swift; sourceTree = "<group>"; };
-		7B493AFB24D7431700E7143D /* fluxctl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = fluxctl; sourceTree = "<group>"; };
 		7B493AFE24D7445B00E7143D /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		7B50453B24DAB7EC003F01B1 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		7B50453D24DAC557003F01B1 /* DeployViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeployViewModel.swift; sourceTree = "<group>"; };
@@ -102,7 +101,6 @@
 		7B493AFD24D7434300E7143D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7B493AFB24D7431700E7143D /* fluxctl */,
 				7BE0095724D5860C00933472 /* Localizable.strings */,
 				7B8E92B924D540F80083252A /* Assets.xcassets */,
 			);
