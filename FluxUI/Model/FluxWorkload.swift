@@ -83,7 +83,7 @@ struct FluxWorkload : Decodable, Identifiable {
 	var rollout: Rollout
 	var syncError: String
 	var antecedent: String
-	var labels: [String: String]
+	var labels: [String: String]?
 	
 	var automated: Bool
 	var locked: Bool
@@ -103,7 +103,7 @@ struct FluxWorkload : Decodable, Identifiable {
 		rollout = try container.decode(Rollout.self, forKey: .Rollout)
 		syncError = try container.decode(String.self, forKey: .SyncError)
 		antecedent = try container.decode(String.self, forKey: .Antecedent)
-		labels = try container.decode([String: String].self, forKey: .Labels)
+		labels = try container.decodeIfPresent([String: String].self, forKey: .Labels)
 		
 		automated = try container.decode(Bool.self, forKey: .Automated)
 		locked = try container.decode(Bool.self, forKey: .Locked)
