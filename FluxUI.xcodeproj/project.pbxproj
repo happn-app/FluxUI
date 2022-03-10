@@ -200,9 +200,9 @@
 			);
 			name = FluxUI;
 			packageProductDependencies = (
-				7BE0095524D5857100933472 /* XibLoc */,
-				7B1B2CD024D78B210098DC07 /* LegibleError */,
 				7B5E380D25221EF8009A5B4C /* Alamofire */,
+				7B1B2CD024D78B210098DC07 /* LegibleError */,
+				7BE0095524D5857100933472 /* XibLoc */,
 			);
 			productName = FluxUI;
 			productReference = 7B8E92B224D540F70083252A /* FluxUI.app */;
@@ -233,9 +233,9 @@
 			);
 			mainGroup = 7B8E92A924D540F70083252A;
 			packageReferences = (
-				7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */,
-				7B1B2CCF24D78B210098DC07 /* XCRemoteSwiftPackageReference "LegibleError" */,
 				7B5E380C25221EF8009A5B4C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7B1B2CCF24D78B210098DC07 /* XCRemoteSwiftPackageReference "LegibleError" */,
+				7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */,
 			);
 			productRefGroup = 7B8E92B324D540F70083252A /* Products */;
 			projectDirPath = "";
@@ -251,12 +251,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B8E930724D542D60083252A /* Main.storyboard in Resources */,
-				7BE0096324D6E8D000933472 /* images.json in Resources */,
-				7BE0096424D6E8D300933472 /* workloads.json in Resources */,
-				7BE0095924D5860C00933472 /* Localizable.strings in Resources */,
-				7BE0096524D6E8D500933472 /* Preview Assets.xcassets in Resources */,
 				7B8E92BA24D540F80083252A /* Assets.xcassets in Resources */,
+				7BE0096324D6E8D000933472 /* images.json in Resources */,
+				7BE0095924D5860C00933472 /* Localizable.strings in Resources */,
+				7B8E930724D542D60083252A /* Main.storyboard in Resources */,
+				7BE0096524D6E8D500933472 /* Preview Assets.xcassets in Resources */,
+				7BE0096424D6E8D300933472 /* workloads.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,26 +267,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */,
-				7B493AF524D6F90600E7143D /* WorkloadNavigationView.swift in Sources */,
-				7BE0096024D5FB9D00933472 /* FluxWorkloadView.swift in Sources */,
-				7BE0096224D60F4C00933472 /* FluxWorkloadRow.swift in Sources */,
-				7BCA81E824D97BA1009CD76F /* LazyView.swift in Sources */,
-				7B8E92B824D540F70083252A /* ContentView.swift in Sources */,
-				7B1B2CD524D79E7E0098DC07 /* FluxContainersViewModel.swift in Sources */,
-				7B1B2CCE24D780DE0098DC07 /* FluxSettings.swift in Sources */,
-				7B493AF824D7141D00E7143D /* Constants.swift in Sources */,
-				7B529BFF24E188C20080F3AF /* NewFluxUrlView.swift in Sources */,
-				7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */,
-				7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */,
-				7B529C0124E189290080F3AF /* NewFluxUrlViewModel.swift in Sources */,
-				7B1B2CD324D79BF90098DC07 /* FluxContainerView.swift in Sources */,
-				7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */,
-				7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */,
-				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,
-				7B493AF324D6EFA800E7143D /* MainWindowController.swift in Sources */,
 				7B50453C24DAB7EC003F01B1 /* ActivityIndicatorView.swift in Sources */,
+				7B8E92B624D540F70083252A /* AppDelegate.swift in Sources */,
+				7B493AF824D7141D00E7143D /* Constants.swift in Sources */,
+				7B8E92B824D540F70083252A /* ContentView.swift in Sources */,
 				7B50453E24DAC557003F01B1 /* DeployViewModel.swift in Sources */,
+				7B643F3124D57FD2001CD010 /* FluxContainer.swift in Sources */,
+				7B1B2CD524D79E7E0098DC07 /* FluxContainersViewModel.swift in Sources */,
+				7B1B2CD324D79BF90098DC07 /* FluxContainerView.swift in Sources */,
+				7B643F2F24D57F6B001CD010 /* FluxImage.swift in Sources */,
+				7B1B2CCE24D780DE0098DC07 /* FluxSettings.swift in Sources */,
+				7B643F3324D581E3001CD010 /* FluxWorkload.swift in Sources */,
+				7BE0096224D60F4C00933472 /* FluxWorkloadRow.swift in Sources */,
+				7B493AFA24D73E1100E7143D /* FluxWorkloadsViewModel.swift in Sources */,
+				7BE0096024D5FB9D00933472 /* FluxWorkloadView.swift in Sources */,
+				7BCA81E824D97BA1009CD76F /* LazyView.swift in Sources */,
+				7B493AF324D6EFA800E7143D /* MainWindowController.swift in Sources */,
+				7B529BFF24E188C20080F3AF /* NewFluxUrlView.swift in Sources */,
+				7B529C0124E189290080F3AF /* NewFluxUrlViewModel.swift in Sources */,
+				7B493AFF24D7445B00E7143D /* SimpleError.swift in Sources */,
+				7B493AF524D6F90600E7143D /* WorkloadNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
