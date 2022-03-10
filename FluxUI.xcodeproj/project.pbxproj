@@ -526,7 +526,7 @@
 		};
 		7BE0095424D5857100933472 /* XCRemoteSwiftPackageReference "XibLoc" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/happn-tech/XibLoc.git";
+			repositoryURL = "https://github.com/happn-app/XibLoc.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.1;
