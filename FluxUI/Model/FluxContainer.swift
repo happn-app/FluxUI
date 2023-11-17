@@ -29,7 +29,7 @@ struct FluxContainer : Decodable {
 		var lastFetched: Date?
 		
 		init(from decoder: Decoder) throws {
-			let container = try decoder.container(keyedBy: Self.CodingKeys)
+			let container = try decoder.container(keyedBy: Self.CodingKeys.self)
 			id = try container.decode(String.self, forKey: .ID)
 			digest = try container.decodeIfPresent(String.self, forKey: .Digest)
 			imageID = try container.decodeIfPresent(String.self, forKey: .ImageID)
@@ -79,7 +79,7 @@ struct FluxContainer : Decodable {
 	var newFilteredImagesCount: Int
 	
 	init(from decoder: Decoder) throws {
-		let container = try decoder.container(keyedBy: Self.CodingKeys)
+		let container = try decoder.container(keyedBy: Self.CodingKeys.self)
 		name = try container.decode(String.self, forKey: .Name)
 		
 		current = try container.decode(ContainerDescription.self, forKey: .Current)

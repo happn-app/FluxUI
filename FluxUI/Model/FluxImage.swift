@@ -24,7 +24,7 @@ struct FluxImage : Decodable, Identifiable {
 	var containers: [FluxContainer]
 	
 	init(from decoder: Decoder) throws {
-		let container = try decoder.container(keyedBy: Self.CodingKeys)
+		let container = try decoder.container(keyedBy: Self.CodingKeys.self)
 		id = try container.decode(String.self, forKey: .ID)
 		containers = try container.decode([FluxContainer].self, forKey: .Containers)
 	}

@@ -54,7 +54,7 @@ struct FluxWorkload : Decodable, Identifiable {
 		var messages: [String]? /* Don’t know the type actually… */
 		
 		init(from decoder: Decoder) throws {
-			let container = try decoder.container(keyedBy: Self.CodingKeys)
+			let container = try decoder.container(keyedBy: Self.CodingKeys.self)
 			
 			desired = try container.decode(Int.self, forKey: .Desired)
 			updated = try container.decode(Int.self, forKey: .Updated)
@@ -94,7 +94,7 @@ struct FluxWorkload : Decodable, Identifiable {
 //	var policies: Any
 	
 	init(from decoder: Decoder) throws {
-		let container = try decoder.container(keyedBy: Self.CodingKeys)
+		let container = try decoder.container(keyedBy: Self.CodingKeys.self)
 		
 		id = try container.decode(String.self, forKey: .ID)
 		readOnly = try container.decode(ReadOnlyStatus.self, forKey: .ReadOnly)
