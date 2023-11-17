@@ -1,6 +1,12 @@
 = FluxUI
 François Lamboley <francois.lamboley@happn.com>
 
+---
+
+NOTE: This repo is no longer maintained by happn.
+
+---
+
 A UI for your Flux-based deployments. +
 This project is still in pre-Alpha release stage! Use at your own risks 😉
 
